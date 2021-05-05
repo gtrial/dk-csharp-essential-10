@@ -2,14 +2,14 @@
 
 namespace task02
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            //Создайте класс MyList<T>.
-            //Реализуйте в простейшем приближении возможность использования его экземпляра аналогично экземпляру класса List<T>.
-            //Минимально требуемый интерфейс взаимодействия с экземпляром, должен включать метод добавления элемента,
-            //индексатор для получения значения элемента по указанному индексу и свойство только для чтения для получения общего количества элементов.
+            var myList = new MyList<int>(new[] {1, 2, 3});
+            myList.Add(4);
+            Console.WriteLine((myList.Index(0)));
+            Console.WriteLine((myList.Length));
         }
     }
 }
