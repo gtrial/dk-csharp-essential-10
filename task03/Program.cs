@@ -2,14 +2,14 @@
 
 namespace task03
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
-            //Создайте класс MyDictionary<TKey, TValue>.
-            //Реализуйте в простейшем приближении возможность использования его экземпляра аналогично экземпляру класса Dictionary(Урок 6 пример 5).
-            //Минимально требуемый интерфейс взаимодействия с экземпляром, должен включать метод добавления пар элементов,
-            //индексатор для получения значения элемента по указанному индексу и свойство только для чтения для получения общего количества пар элементов.
+            var myDictionary = new MyDictionary<int, string>(new[] {1, 2}, new[] {"a", "b"});
+            myDictionary.Add(3, "c");
+            Console.WriteLine(myDictionary.Index(1));
+            Console.WriteLine(myDictionary.Length());
         }
     }
 }
