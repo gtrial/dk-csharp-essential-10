@@ -1,14 +1,22 @@
 ﻿using System;
+using task02;
 
 namespace task04
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static T[] GetArray<T>(this MyList<T> list)
         {
-            //Создайте расширяющий метод: public static T[] GetArray<T>(this MyList<T> list)
-            //Примените расширяющий метод к экземпляру типа MyList<T>, разработанному в домашнем задании 2 для данного урока.
-            //Выведите на экран значения элементов массива, который вернул расширяющий метод GetArray().
+            return new T[] { };
+        }
+
+        private static void Main()
+        {
+            var myList = new MyList<int>(new [] {1, 2});
+            foreach (var row in myList.GetArray())
+            {
+                Console.WriteLine(row);
+            }
         }
     }
 }
